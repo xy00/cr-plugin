@@ -23,7 +23,7 @@ async function analyzeCodeWithAI(codeChanges) {
   if (!apiKey) {
     throw new Error('Please set your OpenAI API key in the extension popup.');
   }
-// https://api.siliconflow.cn/v1/chat/completions
+
   const response = await fetch('https://api.siliconflow.cn/v1/chat/completions', {
     method: 'POST',
     headers: {
