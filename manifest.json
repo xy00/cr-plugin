@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Code Review Assistant",
+  "version": "1.0",
+  "description": "Automatically analyzes GitHub pull request code changes and provides AI-powered quality assessment and suggestions.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.siliconflow.cn/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/pull/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
